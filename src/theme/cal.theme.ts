@@ -1,19 +1,13 @@
-import {colors} from './colors'
-import {metrics} from './metrics'
-import {borders} from './borders'
+import { colors } from './colors'
+import { metrics } from './metrics'
+import { borders } from './borders'
+import { font } from './font'
 
 const theme = {
   color: colors,
-  
   borders: borders,
-  
   metrics: metrics,
-  
-  font: {
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    fontSize: metrics.base * 2,
-    color: colors.text.primary,
-  }
+  font: font,
 }
 
 export default theme
