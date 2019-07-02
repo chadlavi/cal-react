@@ -4,6 +4,7 @@ const spacing = {
   compact: base,
   default: base * 2,
   large: base * 3,
+  xl: base * 6,
 }
 
 const height = {

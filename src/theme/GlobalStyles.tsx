@@ -16,10 +16,10 @@ export const GlobalStyles = () => <Global styles={{
       border: 0,
     },
     [theme.metrics.helpers.over(theme.metrics.breakpoints.l)]: {
-      marginTop: theme.metrics.spacing.large,
+      marginTop: theme.metrics.spacing.xl,
       marginLeft: 'auto',
       marginRight: 'auto',
-      maxWidth: theme.metrics.breakpoints.l - 2 * theme.metrics.spacing.large,
+      maxWidth: theme.metrics.breakpoints.m,
     }
   },
 }} />

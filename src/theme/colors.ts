@@ -1,5 +1,5 @@
-export const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
-// export const darkMode = false
+// export const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+export const darkMode = false
 
 const grey = {
   100: '#D3D3D3',

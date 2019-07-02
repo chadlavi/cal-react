@@ -13,6 +13,8 @@ const style = {
     marginTop: theme.metrics.spacing.compact * 2.5,
     marginRight: theme.metrics.spacing.compact * 2.5,
     marginBottom: theme.metrics.spacing.compact * 2.5,
+    fontSize: theme.metrics.base * 2.5,
+    padding: `${theme.metrics.padding.compact * 1.25}px ${theme.metrics.padding.compact * 2.5}px`,
   },
   '&.primary': {
     color: theme.color.white,
