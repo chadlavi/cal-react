@@ -4,11 +4,16 @@ const style = {
   padding: `${theme.metrics.padding.default/2}px ${theme.metrics.padding.default}px`,
   borderRadius: theme.borders.radius.default,
   border: '1px solid',
-  fontSize: theme.font.fontSize,
+  ...theme.font,
   display: 'block',
   marginTop: theme.metrics.spacing.default,
   marginRight: theme.metrics.spacing.default,
   marginBottom: theme.metrics.spacing.default,
+  [theme.metrics.helpers.under(theme.metrics.breakpoints.sm)]: {
+    marginTop: theme.metrics.spacing.compact * 2.5,
+    marginRight: theme.metrics.spacing.compact * 2.5,
+    marginBottom: theme.metrics.spacing.compact * 2.5,
+  },
   '&.primary': {
     color: theme.color.white,
     backgroundColor: theme.color.primary[500],

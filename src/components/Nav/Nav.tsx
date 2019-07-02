@@ -13,7 +13,8 @@ interface navLink {
   route: string
 }
 
-const StyledLink = styled(({active, ...props}) => <Link {...props}/>)<{active: boolean}>(
+const StyledLink = styled(
+  ({active, ...props}) => <Link {...props}/>)<{active: boolean}>(
   {
     boxSizing: 'border-box',
     textDecoration: 'none',
@@ -24,10 +25,22 @@ const StyledLink = styled(({active, ...props}) => <Link {...props}/>)<{active: b
     '&:hover': {
       backgroundColor: theme.color.grey[600],
     },
+    '@media (hover: none)' : {
+      '&:hover': {
+        backgroundColor: 'none',
+      },
+    },
     '&:focus': {
       ...theme.borders.focusStyle.inset,
     },
-  }, props => ({backgroundColor: props.active ? theme.color.primary[500] : 'inherit'})
+  }, props => (
+    {
+      '&, &:hover': {
+        backgroundColor: props.active 
+          ? theme.color.primary[500] 
+          : undefined
+      }
+    })
 )
 
 const LI = styled('li')({
@@ -36,6 +49,7 @@ const LI = styled('li')({
   [theme.metrics.helpers.under(theme.metrics.breakpoints.sm)]: {
     display: 'block',
     width: '100%',
+    background: theme.color.grey[500],
   }
 })
 
@@ -55,7 +69,7 @@ const UL = styled(({show, ...props}) => <ul {...props}/>)<{show: boolean}>({
   })
 )
 
-const FullWidthPArent = styled('div')({
+const FullWidthParent = styled(({visible, ...props}) => <div {...props} />)({
   margin: 0,
   padding: 0,
   overflow: 'hidden',
@@ -64,8 +78,11 @@ const FullWidthPArent = styled('div')({
   left: 0,
   top: 0,
   width: '100%',
-
-})
+  transition: 'top .1s ease-in',
+  [theme.metrics.helpers.under(theme.metrics.breakpoints.sm)]: {
+    backgroundColor: theme.color.background.default,
+  }
+}, props => ({top: props.visible ? 0 : -60}))
 
 const NavWrapper = styled('div')(
   {
@@ -77,26 +94,47 @@ const Nav: React.FunctionComponent<NavProps> = (props) => {
   const { navLinks } = props
 
   const [open, setOpen] = React.useState(false)
+  const [scroll, setScroll] = React.useState(window.pageYOffset)
+  const [scrolling, setScrolling] = React.useState(true)
+
+  const listenScrollEvent = () => {
+    const shouldBeVisible = window.pageYOffset <= scroll ||
+      window.pageYOffset < theme.metrics.height.nav / 2
+    setScrolling(shouldBeVisible)
+    setScroll(window.pageYOffset)
+  }
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', listenScrollEvent)
+    return () => {
+      window.removeEventListener('scroll', listenScrollEvent)
+    }
+  })
+  
   return (
     <>
       {
         navLinks
           &&
           <NavWrapper>
-            <FullWidthPArent>
-              <MenuButton onClick={() => setOpen(o => !o)} />
+            <FullWidthParent visible={scrolling}>
+              <MenuButton onClick={() => setOpen(o => !o)} open={open}/>
               <UL show={open}>
                 {
                   navLinks.map((l: navLink) =>
                     <LI key={l.route}>
-                      <StyledLink onClick={() => setOpen(o => !o)} to={l.route} active={window.location.pathname === l.route}>
+                      <StyledLink
+                        onClick={() => setOpen(false)}
+                        to={l.route}
+                        active={window.location.pathname === l.route}
+                      >
                         {l.title}
                       </StyledLink>
                     </LI>
                   )
                 }
               </UL>
-            </FullWidthPArent>
+            </FullWidthParent>
           </NavWrapper>
       }
     </>

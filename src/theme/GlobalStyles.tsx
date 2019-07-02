@@ -14,6 +14,12 @@ export const GlobalStyles = () => <Global styles={{
     },
     '& *::-moz-focus-inner': {
       border: 0,
+    },
+    [theme.metrics.helpers.over(theme.metrics.breakpoints.l)]: {
+      marginTop: theme.metrics.spacing.large,
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      maxWidth: theme.metrics.breakpoints.l - 2 * theme.metrics.spacing.large,
     }
   },
 }} />
