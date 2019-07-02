@@ -15,5 +15,5 @@ export const GlobalStyles = () => <Global styles={{
     '& *::-moz-focus-inner': {
       border: 0,
     }
-  } 
+  },
 }} />
