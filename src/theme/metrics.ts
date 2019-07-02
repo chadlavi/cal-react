@@ -5,6 +5,17 @@ const spacing = {
   default: base * 2,
   large: base * 3,
 }
+
+const height = {
+  ...spacing,
+  nav: 50,
+}
+
+const width = {
+  ...spacing,
+  navButton: height.nav,
+}
+
 const padding = {
   compact: base,
   default: base * 2,
@@ -24,7 +35,9 @@ const under = (size: Breakpoint) => `@media (max-width: ${size + 1}px)`
 export const metrics = {
   base: base,
   spacing: spacing,
+  height: height,
   padding: padding,
+  width: width,
   breakpoints: Breakpoint,
   helpers: {
     over: over,

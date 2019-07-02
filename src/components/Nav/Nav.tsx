@@ -69,7 +69,7 @@ const FullWidthPArent = styled('div')({
 
 const NavWrapper = styled('div')(
   {
-    height: 50,
+    height: theme.metrics.height.nav,
   }
 )
 

@@ -4,13 +4,13 @@ import theme from '../../../../theme/cal.theme'
 import { Icon } from '../../../'
 
 interface MenuButtonProps {
-  onClick: () => void
+  onClick: () => void | {}
 }
 
 const StyledMenuButton = styled('button')({
   border: 'none',
-  height: 50,
-  width: 50,
+  height: theme.metrics.height.nav,
+  width: theme.metrics.width.navButton,
   fontSize: 18,
   display: 'block',
   float: 'right',
