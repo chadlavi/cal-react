@@ -1,2 +1,2 @@
 import Nav from './Nav'
-export {Nav} 
+export {Nav}

@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import theme from '../../theme/cal.theme'
 import styled from '@emotion/styled'
+import { MenuButton } from './components'
 
 interface NavProps {
   navLinks?: Array<navLink>
@@ -12,32 +13,49 @@ interface navLink {
   route: string
 }
 
-const StyledLink = styled(Link)(
+const StyledLink = styled(({active, ...props}) => <Link {...props}/>)<{active: boolean}>(
   {
+    boxSizing: 'border-box',
     textDecoration: 'none',
     display: 'block',
     color: 'white',
     textAlign: 'center',
     padding: theme.metrics.padding.default,
-    '&:hover, &.active:hover': {
+    '&:hover': {
       backgroundColor: theme.color.grey[600],
     },
     '&:focus': {
       ...theme.borders.focusStyle.inset,
     },
-    '&.active': {
-    backgroundColor: theme.color.primary[500],
-    }
-  }
+  }, props => ({backgroundColor: props.active ? theme.color.primary[500] : 'inherit'})
 )
 
 const LI = styled('li')({
   display: 'inline',
   float: 'left',
+  [theme.metrics.helpers.under(theme.metrics.breakpoints.sm)]: {
+    display: 'block',
+    width: '100%',
+  }
 })
 
-const UL = styled('ul')({
+const UL = styled(({show, ...props}) => <ul {...props}/>)<{show: boolean}>({
   listStyleType: 'none',
+  margin: 0,
+  padding: 0,
+  height: '100%',
+  width: '100%',
+}, props => (
+  {
+    [theme.metrics.helpers.under(theme.metrics.breakpoints.sm)]: {
+      display: props.show ? 'block' : 'none',
+      maxHeight: props.show ? '100vh' : 0,
+      transition: 'max-height 10s ease-in-out',
+    }
+  })
+)
+
+const FullWidthPArent = styled('div')({
   margin: 0,
   padding: 0,
   overflow: 'hidden',
@@ -46,33 +64,39 @@ const UL = styled('ul')({
   left: 0,
   top: 0,
   width: '100%',
+
 })
 
 const NavWrapper = styled('div')(
   {
-    height: 47.2,
+    height: 50,
   }
 )
 
 const Nav: React.FunctionComponent<NavProps> = (props) => {
   const { navLinks } = props
+
+  const [open, setOpen] = React.useState(false)
   return (
     <>
       {
-        navLinks 
-          && 
+        navLinks
+          &&
           <NavWrapper>
-            <UL>
-              {
-                navLinks.map((l: navLink) => 
-                  <LI key={l.route}>
-                    <StyledLink to={l.route} className={window.location.pathname === l.route ? 'active' : ''}>
-                      {l.title}
-                    </StyledLink>
-                  </LI>
-                )
-              }
-            </UL>
+            <FullWidthPArent>
+              <MenuButton onClick={() => setOpen(o => !o)} />
+              <UL show={open}>
+                {
+                  navLinks.map((l: navLink) =>
+                    <LI key={l.route}>
+                      <StyledLink onClick={() => setOpen(o => !o)} to={l.route} active={window.location.pathname === l.route}>
+                        {l.title}
+                      </StyledLink>
+                    </LI>
+                  )
+                }
+              </UL>
+            </FullWidthPArent>
           </NavWrapper>
       }
     </>
