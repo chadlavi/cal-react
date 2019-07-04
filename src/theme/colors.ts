@@ -68,6 +68,7 @@ const black = 'black'
 const primary = {
   300: blue[300],
   500: blue[500],
+  600: blue[600],
   700: blue[700],
 }
 
@@ -85,6 +86,7 @@ export const colors = {
   error: {
     300: red[300],
     500: red[500],
+    600: red[600],
     700: red[700],
   },
 

@@ -43,7 +43,7 @@ const StyledLink = styled(
     })
 )
 
-const LI = styled('li')({
+const NavLi = styled('li')({
   display: 'inline',
   float: 'left',
   [theme.metrics.helpers.under(theme.metrics.breakpoints.sm)]: {
@@ -53,7 +53,7 @@ const LI = styled('li')({
   }
 })
 
-const UL = styled(({show, ...props}) => <ul {...props}/>)<{show: boolean}>({
+const NavUl = styled(({show, ...props}) => <ul {...props}/>)<{show: boolean}>({
   listStyleType: 'none',
   margin: 0,
   padding: 0,
@@ -90,7 +90,7 @@ const NavWrapper = styled('div')(
   }
 )
 
-const Nav: React.FunctionComponent<NavProps> = (props) => {
+const Nav = (props: NavProps) => {
   const { navLinks } = props
 
   const [open, setOpen] = React.useState(false)
@@ -119,10 +119,10 @@ const Nav: React.FunctionComponent<NavProps> = (props) => {
           <NavWrapper>
             <FullWidthParent visible={scrolling}>
               <MenuButton onClick={() => setOpen(o => !o)} open={open}/>
-              <UL show={open}>
+              <NavUl show={open}>
                 {
                   navLinks.map((l: navLink) =>
-                    <LI key={l.route}>
+                    <NavLi key={l.route}>
                       <StyledLink
                         onClick={() => setOpen(false)}
                         to={l.route}
@@ -130,10 +130,10 @@ const Nav: React.FunctionComponent<NavProps> = (props) => {
                       >
                         {l.title}
                       </StyledLink>
-                    </LI>
+                    </NavLi>
                   )
                 }
-              </UL>
+              </NavUl>
             </FullWidthParent>
           </NavWrapper>
       }
