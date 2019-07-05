@@ -6,4 +6,4 @@ const SkipnavContainer = styled('div')(skipnavContainerStyle)
 
 const SkipnavLink = styled('a')(skipnavContainerLinkStyle)
 
-export const Skipnav = () => <SkipnavContainer><SkipnavLink href='#main'>Skip to main content</SkipnavLink></SkipnavContainer>
+export const Skipnav: React.FC = () => <SkipnavContainer><SkipnavLink href='#main'>Skip to main content</SkipnavLink></SkipnavContainer>

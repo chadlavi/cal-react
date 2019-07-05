@@ -2,24 +2,26 @@ import React, {createElement} from 'react'
 import marksy from 'marksy/jsx'
 import {
   Button,
+  ButtonGroup,
   Li,
   Link,
+  isExternal,
   Ul, 
 } from '..'
 
-interface MarkdownProps {
-  markdown: any
-}
-
-export const Markdown = (props: MarkdownProps) => {
-
-  const {markdown} = props
+export const Markdown = (markdown: string) : {content: object, title: string} => {
 
   const compile = marksy({
     createElement,
     elements: {
       a (props: any) {
-        return (<Link {...props} />)
+        const external = isExternal(props.href)
+        const {href, ...other} = props
+        return (
+          external
+          ? <Link href={href} {...other} />
+          : <Link to={href} {...other} />
+      )
       },
       ul (props: any) {
         return (<Ul {...props} />)
@@ -33,9 +35,17 @@ export const Markdown = (props: MarkdownProps) => {
         return (
           <Button {...props} />
         )
-      }
+      },
+      ButtonGroup (props: any) {
+        return (
+          <ButtonGroup {...props} />
+        )
+      },
     },
   })
 
-  return compile(markdown).tree
+  return {
+    content: compile(markdown).tree,
+    title: compile(markdown).toc[0].title,
+  }
 }

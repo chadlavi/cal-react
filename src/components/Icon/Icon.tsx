@@ -22,12 +22,12 @@ interface IconProps {
   type?: 'solid' | 'regular' | 'brand'
 }
 
-export const Icon = (props: IconProps) => {
+export const Icon: React.FC<IconProps> = (props: IconProps) => {
 
   const {
     type = 'solid',
     name
   } = props
 
-return <FontAwesomeIcon icon={[IconTypes[type], name]} />
+  return <FontAwesomeIcon icon={[IconTypes[type], name]} />
 }

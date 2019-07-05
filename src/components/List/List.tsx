@@ -11,6 +11,6 @@ const SL = styled('li')({
   margin: 2,
 })
 
-export const Ul = (props: any) => <SU {...props} />
+export const Ul: React.FC = (props: any) => <SU {...props} />
 
-export const Li = (props: any) => <SL {...props} />
+export const Li: React.FC = (props: any) => <SL {...props} />

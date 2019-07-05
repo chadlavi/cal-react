@@ -3,15 +3,7 @@ import { Link } from 'react-router-dom'
 import theme from '../../theme/cal.theme'
 import styled from '@emotion/styled'
 import { MenuButton } from './components'
-
-interface NavProps {
-  navLinks?: Array<navLink>
-}
-
-interface navLink {
-  title: string
-  route: string
-}
+import { routes, RouteProps } from '../../routes'
 
 const StyledLink = styled(
   ({active, ...props}) => <Link {...props}/>)<{active: boolean}>(
@@ -90,8 +82,7 @@ const NavWrapper = styled('div')(
   }
 )
 
-const Nav = (props: NavProps) => {
-  const { navLinks } = props
+const Nav = () => {
 
   const [open, setOpen] = React.useState(false)
   const [scroll, setScroll] = React.useState(window.pageYOffset)
@@ -114,15 +105,14 @@ const Nav = (props: NavProps) => {
   return (
     <>
       {
-        navLinks
-          &&
-          <NavWrapper>
-            <FullWidthParent visible={scrolling}>
-              <MenuButton onClick={() => setOpen(o => !o)} open={open}/>
-              <NavUl show={open}>
-                {
-                  navLinks.map((l: navLink) =>
-                    <NavLi key={l.route}>
+        <NavWrapper>
+          <FullWidthParent visible={scrolling}>
+            <MenuButton onClick={() => setOpen(o => !o)} open={open}/>
+            <NavUl show={open}>
+              {
+                routes.map((l: RouteProps) =>
+                  l.navItem 
+                    ? <NavLi key={l.route}>
                       <StyledLink
                         onClick={() => setOpen(false)}
                         to={l.route}
@@ -130,32 +120,16 @@ const Nav = (props: NavProps) => {
                       >
                         {l.title}
                       </StyledLink>
-                    </NavLi>
-                  )
-                }
-              </NavUl>
-            </FullWidthParent>
-          </NavWrapper>
+                    </NavLi> 
+                    : null
+                )
+              }
+            </NavUl>
+          </FullWidthParent>
+        </NavWrapper>
       }
     </>
   )
-}
-
-Nav.defaultProps = {
-  navLinks: [
-    {
-      title: 'home',
-      route: '/'
-    },
-    {
-      title: 'portfolio',
-      route: '/portfolio'
-    },
-    {
-      title: 'contact',
-      route: '/contact'
-    }
-  ]
 }
 
 export default Nav

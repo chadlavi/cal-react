@@ -1,7 +1,13 @@
 import * as React from 'react'
-import { Home } from './components'
+import * as Pages from './pages'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { GlobalStyles } from './theme/GlobalStyles'
+import { PageRender } from './components'
+import { routes, RouteProps } from './routes'
+
+const Routes = routes.map((l: RouteProps) => (
+    <Route key={l.title} path={l.route} exact component={() => <PageRender markdown={l.component} />} />
+  ))
 
 const App: React.FC = () => {
   return (
@@ -9,8 +15,8 @@ const App: React.FC = () => {
     <GlobalStyles />
     <Router>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route component={Home} />
+        { Routes }
+        <Route component={() => <PageRender markdown={Pages.home} />} />
       </Switch>
     </Router>
     </>

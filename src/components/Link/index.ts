@@ -1,2 +1,2 @@
-export { Link } from './Link'
+export { Link, isExternal } from './Link'
 export { RouterLink } from './RouterLink'

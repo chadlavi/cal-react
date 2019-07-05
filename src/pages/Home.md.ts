@@ -1,5 +1,4 @@
-const markdown = `
-# Hello world
+export const home = `# Hello world
 
 This is a paragraph.
 
@@ -14,10 +13,6 @@ This one has an [external link](https://example.com) and an [internal link](/foo
   * yes
   * okay
 
-\`\`\`
-and a code fence
-\`\`\`
-
 \`\`\`marksy
 <Button
   primary
@@ -26,6 +21,5 @@ and a code fence
 wow damn ok sheesh
 </Button>
 \`\`\`
-`
 
-export default markdown
+`
