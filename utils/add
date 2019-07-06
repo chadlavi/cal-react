@@ -1,0 +1,28 @@
+#! /bin/bash
+
+if [ -z "$1" ]; then
+  echo "FATAL: you must supply a name for the new page."
+  exit 1
+fi
+
+name=$1
+
+newRoute="]\\
+  },\\
+    navItem: false,\\
+    component: Pages.$name,\\
+    route: '/$name',\\
+    title: '$name',\\
+  {"
+
+newPage="export const $name = \`
+# $name
+
+
+\`"
+
+newRoutes=`tail -r src/routes.tsx | sed "s%]%$newRoute%" | tail -r`
+
+#echo "$newRoutes" > src/routes.tsx
+
+echo "$newPage" > src/pages/"$name.md.ts"
