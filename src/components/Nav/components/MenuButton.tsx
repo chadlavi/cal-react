@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
-import theme from '../../../../theme/cal.theme'
-import { Icon } from '../../../'
+import theme from '../../../theme/cal.theme'
+import { Icon } from '../../'
 
 interface MenuButtonProps {
   onClick: () => void | {}
@@ -26,7 +26,7 @@ const StyledMenuButton = styled('button')({
   }
 })
 
-const Backdrop = styled(({open, show, ...props}) => <button {...props} />)({
+const Backdrop = styled(({open, show, ...props}) => <button { ...props } />)({
   background: 'transparent',
   height: '100vh',
   width: '100vw',
@@ -43,10 +43,10 @@ const Backdrop = styled(({open, show, ...props}) => <button {...props} />)({
 
 export const MenuButton = (props: MenuButtonProps) => (
   <>
-    <StyledMenuButton onClick={props.onClick}>
+    <StyledMenuButton onClick={ props.onClick }>
       <Icon name={props.open ? 'times' : 'bars'} />
     </StyledMenuButton>
-    <Backdrop onClick={props.onClick} show={props.open} />
+    <Backdrop onClick={ props.onClick } show={ props.open } />
   </>
 )
 
