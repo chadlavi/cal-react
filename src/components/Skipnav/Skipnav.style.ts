@@ -22,7 +22,7 @@ export const skipnavContainerStyle = {
   }
 }
 
-export const skipnavContainerLinkStyle = {
+export const skipnavLinkStyle = {
   padding: theme.metrics.padding.default,
   display: 'block',
   color: theme.color.text.link,

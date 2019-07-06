@@ -11,7 +11,7 @@ interface PageRenderProps {
   title?: string
 }
 
-const PageRender: React.FC<PageRenderProps> = (props: PageRenderProps) => {
+const PageRender: React.FC<PageRenderProps> = (props) => {
   const { markdown, title } = props
   const rendered = Markdown(markdown)
 

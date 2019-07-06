@@ -25,6 +25,5 @@ export const routes: Array<RouteProps> = [
     route: '/contact',
     component: Pages.contact,
     navItem: true,
-  }
+  },
 ]
-

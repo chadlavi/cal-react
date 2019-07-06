@@ -22,7 +22,7 @@ interface IconProps {
   type?: 'solid' | 'regular' | 'brand'
 }
 
-export const Icon: React.FC<IconProps> = (props: IconProps) => {
+export const Icon: React.FC<IconProps> = (props) => {
 
   const {
     type = 'solid',

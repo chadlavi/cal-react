@@ -13,12 +13,11 @@ interface ButtonProps {
   error?: boolean
 }
 
-export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
+export const Button: React.FC<ButtonProps> = (props) => {
   const {
     children,
     error,
     primary,
-    onClick,
     className,
     ...other
   } = props
@@ -31,7 +30,6 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         primary ? 'primary' : null
         )
     }
-    onClick={ onClick }
     { ...other }
   >
     { props.children }

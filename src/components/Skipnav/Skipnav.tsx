@@ -1,9 +1,15 @@
 import * as React from 'react'
-import { skipnavContainerStyle, skipnavContainerLinkStyle } from './Skipnav.style'
+import {
+  skipnavContainerStyle,
+  skipnavLinkStyle,
+} from './Skipnav.style'
 import styled from '@emotion/styled'
 
 const SkipnavContainer = styled('div')(skipnavContainerStyle)
+const SkipnavLink = styled('a')(skipnavLinkStyle)
 
-const SkipnavLink = styled('a')(skipnavContainerLinkStyle)
-
-export const Skipnav: React.FC = () => <SkipnavContainer><SkipnavLink href='#main'>Skip to main content</SkipnavLink></SkipnavContainer>
+export const Skipnav: React.FC = () => (
+  <SkipnavContainer>
+    <SkipnavLink href='#main'>Skip to main content</SkipnavLink>
+  </SkipnavContainer>
+  )

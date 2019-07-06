@@ -18,22 +18,22 @@ export const Nav: React.FC = () => {
   return (
     <NavWrapper>
       <FullWidthParent visible={ scrolling }>
-        <MenuButton onClick={() => setOpen(o => !o)} open={ open }/>
+        <MenuButton onClick={() => setOpen(o => !o)} open={ open } />
         <NavUl show={ open }>
           {
-            routes.map((l: RouteProps) =>
-              l.navItem 
-                ? <NavLi key={ l.route }>
+            routes
+              .filter(r => r.navItem)
+              .map((l: RouteProps) =>
+                <NavLi key={ l.route }>
                   <StyledLink
-                    onClick={() => setOpen(false)}
+                    onClick={ () => setOpen(false) }
                     to={ l.route }
-                    active={window.location.pathname === l.route}
+                    active={ window.location.pathname === l.route }
                   >
                     { l.title }
                   </StyledLink>
-                </NavLi> 
-                : null
-            )
+                </NavLi>
+              )
           }
         </NavUl>
       </FullWidthParent>

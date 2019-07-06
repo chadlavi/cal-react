@@ -5,20 +5,27 @@ import { GlobalStyles } from './theme/GlobalStyles'
 import { PageRender } from './components'
 import { routes, RouteProps } from './routes'
 
-const Routes = routes.map((l: RouteProps) => (
-    <Route key={ l.title } path={ l.route } exact component={() => <PageRender markdown={ l.component } />} />
+const pageRender = (m: string) => { return () => <PageRender markdown={ m } /> }
+
+const ReactRoutes = routes.map((l: RouteProps) => (
+    <Route
+      key={ l.title }
+      path={ l.route }
+      exact
+      component={ pageRender(l.component) }
+    />
   ))
 
 const App: React.FC = () => {
   return (
     <>
-    <GlobalStyles />
-    <Router>
-      <Switch>
-        { Routes }
-        <Route component={() => <PageRender markdown={ Pages.home } />} />
-      </Switch>
-    </Router>
+      <GlobalStyles />
+      <Router>
+        <Switch>
+          { ReactRoutes }
+          <Route component={ pageRender(Pages.home) } />
+        </Switch>
+      </Router>
     </>
   )
 }
