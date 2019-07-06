@@ -1,7 +1,7 @@
 import theme from '../../theme/cal.theme'
 
 const style = {
-  padding: `${theme.metrics.padding.default/2}px ${theme.metrics.padding.default}px`,
+  padding: `${ theme.metrics.padding.default/2 }px ${ theme.metrics.padding.default }px`,
   borderRadius: theme.borders.radius.default,
   border: '1px solid',
   borderColor: 'transparent',

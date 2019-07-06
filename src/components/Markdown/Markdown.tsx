@@ -1,13 +1,13 @@
-import React, {createElement} from 'react'
+import React, { createElement } from 'react'
 import marksy from 'marksy/jsx'
 import {
   Button,
   ButtonGroup,
   Li,
   Link,
-  isExternal,
   Ul, 
 } from '..'
+import { isExternal } from '../../helpers'
 
 export const Markdown = (markdown: string) : {content: object, title: string} => {
 
@@ -19,26 +19,26 @@ export const Markdown = (markdown: string) : {content: object, title: string} =>
         const {href, ...other} = props
         return (
           external
-          ? <Link href={href} {...other} />
-          : <Link to={href} {...other} />
+          ? <Link href={ href } { ...other } />
+          : <Link to={ href } { ...other } />
       )
       },
       ul (props: any) {
-        return (<Ul {...props} />)
+        return (<Ul { ...props } />)
       },
       li (props: any) {
-        return (<Li {...props} />)
+        return (<Li { ...props } />)
       },
     },
     components: {
       Button (props: any) {
         return (
-          <Button {...props} />
+          <Button { ...props } />
         )
       },
       ButtonGroup (props: any) {
         return (
-          <ButtonGroup {...props} />
+          <ButtonGroup { ...props } />
         )
       },
     },

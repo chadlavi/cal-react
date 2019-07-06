@@ -1,9 +1,10 @@
 import * as React from 'react'
-import {linkStyle} from './Link.style'
-import styled from '@emotion/styled'
 import { Icon } from '../'
+import { isExternal } from '../../helpers'
 import { LinkProps as RouterLinkProps } from 'react-router-dom'
 import { RouterLink } from './RouterLink' 
+import { linkStyle } from './Link.style'
+import styled from '@emotion/styled'
 
 interface LinkProps extends RouterLinkProps {
   href?: string
@@ -11,13 +12,6 @@ interface LinkProps extends RouterLinkProps {
 }
 
 const StyledLink = styled('a')(linkStyle)
-
-export const isExternal = (url?: string) => {
-  const domain = (url?: string) => {
-      return url && url.replace('http://','').replace('https://','').split('/')[0]
-  }
-  return Boolean(url) && Boolean(domain(url)) && domain(window.location.href) !== domain(url)
-}
 
 export const Link = (props: LinkProps) => {
   
@@ -32,15 +26,15 @@ export const Link = (props: LinkProps) => {
     || typeof(children) === 'string'
 
   if (to) return (
-    <RouterLink to={to} {...props}>{children}</RouterLink>
+    <RouterLink to={ to } { ...props }>{ children }</RouterLink>
   )
   return (
     <StyledLink
       target={external ? '_blank' : undefined}
-      href={href}
-      {...props}
+      href={ href }
+      { ...props }
     >
-      {children}{(external && textLink) ? <span style={{fontSize: '80%'}}> <Icon name='link' /></span> : null}
+      { children }{(external && textLink) ? <span style={{fontSize: '80%'}}> <Icon name='link' /></span> : null}
     </StyledLink>
   )
 }

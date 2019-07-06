@@ -31,9 +31,9 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         primary ? 'primary' : null
         )
     }
-    onClick={onClick}
-    {...other}
+    onClick={ onClick }
+    { ...other }
   >
-    {props.children}
+    { props.children }
   </StyledButton>
 )}

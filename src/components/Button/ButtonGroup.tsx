@@ -10,4 +10,4 @@ const StyledButtonGroup = styled('div')({
   flexDirection: 'row-reverse',
 })
 
-export const ButtonGroup: React.FC<ButtonGroupProps> = (props: ButtonGroupProps) => <StyledButtonGroup {...props} />
+export const ButtonGroup: React.FC<ButtonGroupProps> = (props: ButtonGroupProps) => <StyledButtonGroup { ...props } />

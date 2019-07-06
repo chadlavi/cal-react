@@ -30,7 +30,7 @@ enum Breakpoint {
   xl = 1200
 }
 
-const over = (size: Breakpoint) => `@media (min-width: ${size}px)`
+const over = (size: Breakpoint) => `@media (min-width: ${ size }px)`
 const under = (size: Breakpoint) => `@media (max-width: ${size + 1}px)`
 
 export const metrics = {
