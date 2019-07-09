@@ -8,5 +8,5 @@ export const font = {
     fontSize: metrics.base * 2.5,
   },
   color: colors.text.primary,
-  lineHeight: 1.25,
+  lineHeight: 1.5,
 }

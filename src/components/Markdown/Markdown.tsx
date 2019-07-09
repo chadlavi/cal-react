@@ -3,8 +3,12 @@ import marksy from 'marksy/jsx'
 import {
   Button,
   ButtonGroup,
+  Code,
+  Hr,
+  Img,
   Li,
   Link,
+  Pre,
   Ul, 
 } from '..'
 import { isExternal } from '../../helpers'
@@ -16,36 +20,44 @@ export const Markdown = (markdown: string) : {content: object, title: string} =>
     elements: {
       a (props: any) {
         const external = isExternal(props.href)
-        const {href, ...other} = props
+        const { href, ...other } = props
         return (
           external
           ? <Link href={ href } { ...other } />
           : <Link to={ href } { ...other } />
-      )
+        )
+      },
+      code (props: any) {
+        return <Pre { ...props } />
+      },
+      codespan (props: any) {
+        return <Code { ...props } />
+      },
+      hr () {
+        return <Hr />
+      },
+      img (props: any) {
+        return <Img { ...props } />
       },
       ul (props: any) {
-        return (<Ul { ...props } />)
+        return <Ul { ...props } />
       },
       li (props: any) {
-        return (<Li { ...props } />)
+        return <Li { ...props } />
       },
     },
     components: {
       Button (props: any) {
-        return (
-          <Button { ...props } />
-        )
+        return <Button { ...props } />
       },
       ButtonGroup (props: any) {
-        return (
-          <ButtonGroup { ...props } />
-        )
+        return <ButtonGroup { ...props } />
       },
     },
   })
 
   return {
     content: compile(markdown).tree,
-    title: compile(markdown).toc[0].title,
+    title: compile(markdown).toc[0] ? compile(markdown).toc[0].title : undefined,
   }
 }

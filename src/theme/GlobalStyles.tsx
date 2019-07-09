@@ -15,8 +15,12 @@ export const GlobalStyles: React.FC = () => <Global styles={{
     '& *::-moz-focus-inner': {
       border: 0,
     },
+    '& p + h2, & p + h3, & p + h4': {
+      marginTop: theme.metrics.spacing.xl,
+    },
     [theme.metrics.helpers.over(theme.metrics.breakpoints.l)]: {
       marginTop: theme.metrics.spacing.xl,
+      marginBottom: theme.metrics.spacing.xl * 2,
       marginLeft: 'auto',
       marginRight: 'auto',
       maxWidth: theme.metrics.breakpoints.m,

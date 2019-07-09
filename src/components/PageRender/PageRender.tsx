@@ -18,7 +18,7 @@ const PageRender: React.FC<PageRenderProps> = (props) => {
   return (
   <>
   <Helmet>
-    <title>{ title } - { rendered.title }</title>
+    <title>{ title }{ rendered.title ? `- ${ rendered.title }` : '' }</title>
   </Helmet>
   <Skipnav />
   <Nav />
