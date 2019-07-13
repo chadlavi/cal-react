@@ -6,7 +6,8 @@ export const GlobalStyles: React.FC = () => <Global styles={{
   body: {
     backgroundColor: theme.color.background.default,
     margin: theme.metrics.spacing.large,
-    marginTop: 0,
+    marginTop: theme.metrics.spacing.xl,
+
     ...theme.font,
     '& :focus': {
       ...theme.borders.focusStyle.default,
@@ -19,7 +20,6 @@ export const GlobalStyles: React.FC = () => <Global styles={{
       marginTop: theme.metrics.spacing.xl,
     },
     [theme.metrics.helpers.over(theme.metrics.breakpoints.l)]: {
-      marginTop: theme.metrics.spacing.xl,
       marginBottom: theme.metrics.spacing.xl * 2,
       marginLeft: 'auto',
       marginRight: 'auto',

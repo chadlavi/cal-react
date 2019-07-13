@@ -9,11 +9,10 @@ export const StyledLink = styled(
     boxSizing: 'border-box',
     textDecoration: 'none',
     display: 'block',
-    color: 'white',
     textAlign: 'center',
     padding: theme.metrics.padding.default,
     '&:hover': {
-      backgroundColor: theme.color.grey[600],
+      backgroundColor: theme.color.background.nav.hover,
     },
     '@media (hover: none)' : {
       '&:hover': {
@@ -28,7 +27,10 @@ export const StyledLink = styled(
       '&, &:hover': {
         backgroundColor: props.active 
           ? theme.color.primary[500] 
-          : undefined
+          : undefined,
+        color: props.active
+          ? theme.color.white
+          : 'inherit',
       }
     })
 )

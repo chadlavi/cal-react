@@ -1,4 +1,4 @@
-export const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+export const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
 // export const darkMode = false
 
 const grey = {
@@ -77,10 +77,16 @@ export const colors = {
 
   background: {
     default: darkMode ? grey[700] : white,
+    codeBlock: darkMode ? grey[900] : grey[100],
+    nav: {
+      default: darkMode ? grey[500] : blue[100],
+      hover: darkMode ? grey[600] : blue[200],
+    }
   },
+
   text: {
     primary: darkMode ? white : grey[700],
-    link: darkMode ? primary[300] : primary[500]
+    link: darkMode ? primary[300] : primary[700]
   },
 
   error: {

@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import theme from '../../theme/cal.theme'
 
 const StyledPre = styled('pre')({
-  backgroundColor: theme.color.grey[900],
+  backgroundColor: theme.color.background.codeBlock,
   borderRadius: theme.metrics.spacing.compact,
   padding: theme.metrics.spacing.default,
 })

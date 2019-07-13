@@ -6,7 +6,7 @@ export const FullWidthParent = styled(({visible, ...props}) => <div { ...props }
   margin: 0,
   padding: 0,
   overflow: 'hidden',
-  backgroundColor: theme.color.grey[500],
+  backgroundColor: theme.color.background.nav.default,
   position: 'fixed',
   left: 0,
   top: 0,
