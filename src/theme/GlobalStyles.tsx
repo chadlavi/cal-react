@@ -24,6 +24,9 @@ export const GlobalStyles: React.FC = () => <Global styles={{
       marginLeft: 'auto',
       marginRight: 'auto',
       maxWidth: theme.metrics.breakpoints.m,
+    },
+    [theme.metrics.helpers.over(theme.metrics.breakpoints.xxl)]: {
+      maxWidth: theme.metrics.breakpoints.l,
     }
   },
 }} />

@@ -8,6 +8,7 @@ const style = {
   ...theme.font.default,
   fontFamily: theme.font.sansSerif,
   fontWeight: 500,
+  fontSize: theme.metrics.base * 2,
   letterSpacing: '0.2px',
   display: 'block',
   color: theme.color.black,

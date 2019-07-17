@@ -14,6 +14,7 @@ const grey = {
 }
 
 const blue = {
+  50: '#f8f8ff',
   100: '#DEE0FF',
   200: '#BABCFF',
   300: '#9698FF',
@@ -77,16 +78,17 @@ export const colors = {
 
   background: {
     default: darkMode ? grey[700] : white,
-    codeBlock: darkMode ? grey[900] : grey[100],
+    codeBlock: darkMode ? grey[900] : blue[50],
     nav: {
       default: darkMode ? grey[500] : blue[100],
-      hover: darkMode ? grey[600] : blue[200],
+      hover: darkMode ? grey[600] : blue[300],
     }
   },
 
   text: {
     primary: darkMode ? white : grey[700],
-    link: darkMode ? primary[300] : primary[700]
+    link: darkMode ? primary[300] : primary[700],
+    nav: darkMode ? white : blue[800],
   },
 
   error: {

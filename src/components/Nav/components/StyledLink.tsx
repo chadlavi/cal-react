@@ -11,7 +11,7 @@ export const StyledLink = styled(
     display: 'block',
     textAlign: 'center',
     fontFamily: theme.font.sansSerif,
-    fontWeight: 600,
+    fontVariantCaps: 'all-petite-caps',
     padding: theme.metrics.padding.default,
     '&:hover': {
       backgroundColor: theme.color.background.nav.hover,
@@ -32,7 +32,8 @@ export const StyledLink = styled(
           : undefined,
         color: props.active
           ? theme.color.white
-          : 'inherit',
+          : theme.color.text.nav,
+        fontWeight: props.active ? 'bold' : 500,
       }
     })
 )

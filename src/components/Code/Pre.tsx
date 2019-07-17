@@ -7,6 +7,8 @@ const StyledPre = styled('pre')({
   borderRadius: theme.metrics.spacing.compact,
   padding: theme.metrics.spacing.default,
   fontFamily: theme.font.monospace,
+  overflowX: 'auto',
+  maxWidth: theme.metrics.breakpoints.m,
 })
 
 export const Pre: React.FC = (props: any) => {
