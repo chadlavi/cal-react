@@ -28,6 +28,9 @@
     "react-scripts": "^3.0.1",
     "typescript": "^3.5.2"
   },
+  "resolutions": {
+    "lodash": "^4.17.13"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
