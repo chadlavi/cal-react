@@ -1,5 +1,6 @@
 export { Button, ButtonGroup } from './Button'
 export { Code, Pre } from './Code'
+export { H1 } from './Headers'
 export { Hr } from './Hr'
 export { Icon } from './Icon'
 export { Img } from './Img'

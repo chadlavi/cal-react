@@ -4,6 +4,7 @@ import {
   Button,
   ButtonGroup,
   Code,
+  H1,
   Hr,
   Img,
   Li,
@@ -32,6 +33,9 @@ export const Markdown = (markdown: string) : {content: object, title: string} =>
       },
       codespan (props: any) {
         return <Code { ...props } />
+      },
+      h1 (props: any) {
+        return <H1 {...props} />
       },
       hr () {
         return <Hr />

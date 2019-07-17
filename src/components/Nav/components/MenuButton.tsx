@@ -12,7 +12,7 @@ const StyledMenuButton = styled('button')({
   border: 'none',
   height: theme.metrics.height.nav,
   width: theme.metrics.width.navButton,
-  fontSize: theme.font.fontSize * 1.25,
+  fontSize: theme.font.default.fontSize * 1.25,
   paddingRight: theme.metrics.padding.large,
   display: 'block',
   float: 'right',

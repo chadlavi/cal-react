@@ -6,6 +6,7 @@ const StyledPre = styled('pre')({
   backgroundColor: theme.color.background.codeBlock,
   borderRadius: theme.metrics.spacing.compact,
   padding: theme.metrics.spacing.default,
+  fontFamily: theme.font.monospace,
 })
 
 export const Pre: React.FC = (props: any) => {

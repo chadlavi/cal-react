@@ -10,6 +10,8 @@ export const StyledLink = styled(
     textDecoration: 'none',
     display: 'block',
     textAlign: 'center',
+    fontFamily: theme.font.sansSerif,
+    fontWeight: 600,
     padding: theme.metrics.padding.default,
     '&:hover': {
       backgroundColor: theme.color.background.nav.hover,

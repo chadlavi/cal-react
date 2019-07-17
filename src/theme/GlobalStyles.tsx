@@ -8,7 +8,7 @@ export const GlobalStyles: React.FC = () => <Global styles={{
     margin: theme.metrics.spacing.large,
     marginTop: theme.metrics.spacing.xl,
 
-    ...theme.font,
+    ...theme.font.default,
     '& :focus': {
       ...theme.borders.focusStyle.default,
       outline: 'none',

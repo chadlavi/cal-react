@@ -27,6 +27,7 @@ export const skipnavLinkStyle = {
   display: 'block',
   color: theme.color.text.link,
   background: theme.color.background.default,
+  fontFamily: theme.font.sansSerif,
   width: 'max-content',
   margin: 'auto',
 }
