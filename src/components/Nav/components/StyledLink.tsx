@@ -11,7 +11,7 @@ export const StyledLink = styled(
     display: 'block',
     textAlign: 'center',
     fontFamily: theme.font.sansSerif,
-    fontVariantCaps: 'all-petite-caps',
+    fontVariantCaps: 'all-small-caps',
     padding: theme.metrics.padding.default,
     '&:hover': {
       backgroundColor: theme.color.background.nav.hover,
