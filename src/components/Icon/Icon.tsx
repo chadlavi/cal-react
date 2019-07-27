@@ -26,7 +26,7 @@ export const Icon: React.FC<IconProps> = (props) => {
 
   const {
     type = 'solid',
-    name
+    name,
   } = props
 
   return <FontAwesomeIcon icon={[IconTypes[type], name]} />

@@ -14,6 +14,7 @@ interface ButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = (props) => {
+  
   const {
     children,
     error,
@@ -21,17 +22,19 @@ export const Button: React.FC<ButtonProps> = (props) => {
     className,
     ...other
   } = props
+
   return (
-  <StyledButton
-    className={
-      classnames(
-        className,
-        error ? 'error' : null,
-        primary ? 'primary' : null
+    <StyledButton
+      className={
+        classnames(
+          className,
+          error ? 'error' : null,
+          primary ? 'primary' : null,
         )
-    }
-    { ...other }
-  >
-    { props.children }
-  </StyledButton>
-)}
+      }
+      { ...other }
+    >
+      { props.children }
+    </StyledButton>
+  )
+}

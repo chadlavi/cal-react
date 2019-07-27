@@ -15,9 +15,7 @@ export const useScroll = () => {
 
   React.useEffect(() => {
     window.addEventListener('scroll', listenScrollEvent)
-    return () => {
-      window.removeEventListener('scroll', listenScrollEvent)
-    }
+    return () => window.removeEventListener('scroll', listenScrollEvent)
   })
 
   return scrolling

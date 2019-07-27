@@ -12,21 +12,23 @@ interface PageRenderProps {
 }
 
 const PageRender: React.FC<PageRenderProps> = (props) => {
+  
   const { markdown, title } = props
   const rendered = Markdown(markdown)
 
   return (
-  <>
-  <Helmet>
-    <title>{ title }{ rendered.title ? `- ${ rendered.title }` : '' }</title>
-  </Helmet>
-  <Skipnav />
-  <Nav />
-  <main id='main'>
-    { rendered.content }
-  </main>
-  </>
-)}
+    <>
+      <Helmet>
+        <title>{ title }{ rendered.title ? `- ${ rendered.title }` : '' }</title>
+      </Helmet>
+      <Skipnav />
+      <Nav />
+      <main id='main'>
+        { rendered.content }
+      </main>
+    </>
+  )
+}
 
 PageRender.defaultProps = {
   title: 'Chad Lavimoniere'
