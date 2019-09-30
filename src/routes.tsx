@@ -1,4 +1,4 @@
-import * as Pages from './pages'
+import * as Pages from "./pages"
 
 export interface RouteProps {
   title: string
@@ -7,22 +7,22 @@ export interface RouteProps {
   navItem?: boolean
 }
 
-export const routes: Array<RouteProps> = [
+export const routes: RouteProps[] = [
   {
-    title: 'home',
-    route: '/',
+    title: "home",
+    route: "/",
     component: Pages.home,
     navItem: true,
   },
   {
-    title: 'portfolio',
-    route: '/portfolio',
+    title: "portfolio",
+    route: "/portfolio",
     component: Pages.portfolio,
     navItem: true,
   },
   {
-    title: 'contact',
-    route: '/contact',
+    title: "contact",
+    route: "/contact",
     component: Pages.contact,
     navItem: true,
   },

@@ -1,4 +1,6 @@
-import * as React from 'react'
+import * as React from "react"
+import { useScroll } from "../../helpers"
+import { RouteProps, routes } from "../../routes"
 import {
   FullWidthParent,
   MenuButton,
@@ -6,35 +8,38 @@ import {
   NavUl,
   NavWrapper,
   StyledLink,
-} from './components'
-import { routes, RouteProps } from '../../routes'
-import { useScroll } from '../../helpers'
+} from "./components"
 
 export const Nav: React.FC = () => {
 
   const [open, setOpen] = React.useState(false)
   const scrolling = useScroll()
-  
+
+  const handleOpenMenu = () => setOpen((o) => !o)
+  const handleCloseMenu = () => setOpen(false)
+
+  const content = routes
+    .filter((r) => r.navItem)
+    .map((l: RouteProps) =>
+      (
+        <NavLi key={l.route}>
+          <StyledLink
+            onClick={handleCloseMenu}
+            to={l.route}
+            active={window.location.pathname === l.route}
+          >
+            {l.title}
+          </StyledLink>
+        </NavLi>
+      ),
+    )
+
   return (
     <NavWrapper>
-      <FullWidthParent visible={ scrolling }>
-        <MenuButton onClick={() => setOpen(o => !o)} open={ open } />
-        <NavUl show={ open }>
-          {
-            routes
-              .filter(r => r.navItem)
-              .map((l: RouteProps) =>
-                <NavLi key={ l.route }>
-                  <StyledLink
-                    onClick={ () => setOpen(false) }
-                    to={ l.route }
-                    active={ window.location.pathname === l.route }
-                  >
-                    { l.title }
-                  </StyledLink>
-                </NavLi>
-              )
-          }
+      <FullWidthParent visible={scrolling}>
+        <MenuButton onClick={handleOpenMenu} open={open} />
+        <NavUl show={open}>
+          {content}
         </NavUl>
       </FullWidthParent>
     </NavWrapper>

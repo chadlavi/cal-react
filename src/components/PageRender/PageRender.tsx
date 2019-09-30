@@ -1,10 +1,10 @@
-import * as React from 'react'
-import Helmet from 'react-helmet'
+import * as React from "react"
+import Helmet from "react-helmet"
 import {
   Markdown,
   Nav,
   Skipnav,
-} from '..'
+} from ".."
 
 interface PageRenderProps {
   markdown: string
@@ -12,26 +12,26 @@ interface PageRenderProps {
 }
 
 const PageRender: React.FC<PageRenderProps> = (props) => {
-  
+
   const { markdown, title } = props
   const rendered = Markdown(markdown)
 
   return (
     <>
       <Helmet>
-        <title>{ title }{ rendered.title ? `- ${ rendered.title }` : '' }</title>
+        <title>{title}{rendered.title ? `- ${ rendered.title }` : ""}</title>
       </Helmet>
       <Skipnav />
       <Nav />
-      <main id='main'>
-        { rendered.content }
+      <main id="main">
+        {rendered.content}
       </main>
     </>
   )
 }
 
 PageRender.defaultProps = {
-  title: 'Chad Lavimoniere'
+  title: "Chad Lavimoniere",
 }
 
 export { PageRender }

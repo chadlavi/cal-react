@@ -1,18 +1,18 @@
-import * as React from 'react'
-import * as Pages from './pages'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { GlobalStyles } from './theme/GlobalStyles'
-import { PageRender } from './components'
-import { routes, RouteProps } from './routes'
+import * as React from "react"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { PageRender } from "./components"
+import * as Pages from "./pages"
+import { RouteProps, routes } from "./routes"
+import { GlobalStyles } from "./theme/GlobalStyles"
 
-const pageRender = (m: string) => (() => <PageRender markdown={ m } />)
+const pageRender = (m: string) => (() => <PageRender markdown={m} />)
 
 const ReactRoutes = routes.map((r: RouteProps) => (
     <Route
-      component={ pageRender(r.component) }
-      exact
-      key={ r.title }
-      path={ r.route }
+      component={pageRender(r.component)}
+      exact={true}
+      key={r.title}
+      path={r.route}
     />
   ))
 
@@ -21,8 +21,8 @@ const App: React.FC = () => (
     <GlobalStyles />
     <Router>
       <Switch>
-        { ReactRoutes }
-        <Route component={ pageRender(Pages.home) } />
+        {ReactRoutes}
+        <Route component={pageRender(Pages.home)} />
       </Switch>
     </Router>
   </>

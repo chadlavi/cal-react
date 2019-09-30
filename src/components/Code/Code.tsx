@@ -1,8 +1,8 @@
-import * as React from 'react'
-import styled from '@emotion/styled'
-import theme from '../../theme/cal.theme'
+import styled from "@emotion/styled"
+import * as React from "react"
+import theme from "../../theme/cal.theme"
 
-const StyledCode = styled('code')({
+const StyledCode = styled("code")({
   backgroundColor: theme.color.grey[900],
   borderRadius: theme.metrics.spacing.compact / 2,
   padding: theme.metrics.spacing.compact / 2,
@@ -10,5 +10,5 @@ const StyledCode = styled('code')({
 
 export const Code: React.FC = (props: any) => {
   const { children, ...other } = props
-  return <StyledCode { ...other } >{ children }</StyledCode>
+  return <StyledCode {...other} >{children}</StyledCode>
 }

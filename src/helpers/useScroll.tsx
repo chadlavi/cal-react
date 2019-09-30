@@ -1,5 +1,5 @@
-import * as React from 'react'
-import theme from '../theme/cal.theme'
+import * as React from "react"
+import theme from "../theme/cal.theme"
 
 export const useScroll = () => {
 
@@ -14,8 +14,8 @@ export const useScroll = () => {
   }
 
   React.useEffect(() => {
-    window.addEventListener('scroll', listenScrollEvent)
-    return () => window.removeEventListener('scroll', listenScrollEvent)
+    window.addEventListener("scroll", listenScrollEvent)
+    return () => window.removeEventListener("scroll", listenScrollEvent)
   })
 
   return scrolling

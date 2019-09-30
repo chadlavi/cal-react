@@ -1,5 +1,6 @@
-import React, { createElement } from 'react'
-import marksy from 'marksy/jsx'
+// tslint:disable-next-line: no-submodule-imports
+import marksy from "marksy/jsx"
+import React, { createElement } from "react"
 import {
   Button,
   ButtonGroup,
@@ -10,52 +11,52 @@ import {
   Li,
   Link,
   Pre,
-  Ul, 
-} from '..'
-import { isExternal } from '../../helpers'
+  Ul,
+} from ".."
+import { isExternal } from "../../helpers"
 
-export const Markdown = (markdown: string) : {content: object, title: string} => {
+export const Markdown = (markdown: string): {content: object, title: string} => {
 
   const compile = marksy({
     createElement,
     elements: {
-      a (props: any) {
+      a(props: any) {
         const external = isExternal(props.href)
         const { href, ...other } = props
         return (
           external
-          ? <Link href={ href } { ...other } />
-          : <Link to={ href } { ...other } />
+          ? <Link href={href} {...other} />
+          : <Link to={href} {...other} />
         )
       },
-      code (props: any) {
-        return <Pre { ...props } />
+      code(props: any) {
+        return <Pre {...props} />
       },
-      codespan (props: any) {
-        return <Code { ...props } />
+      codespan(props: any) {
+        return <Code {...props} />
       },
-      h1 (props: any) {
+      h1(props: any) {
         return <H1 {...props} />
       },
-      hr () {
+      hr() {
         return <Hr />
       },
-      img (props: any) {
-        return <Img { ...props } />
+      img(props: any) {
+        return <Img {...props} />
       },
-      ul (props: any) {
-        return <Ul { ...props } />
+      ul(props: any) {
+        return <Ul {...props} />
       },
-      li (props: any) {
-        return <Li { ...props } />
+      li(props: any) {
+        return <Li {...props} />
       },
     },
     components: {
-      Button (props: any) {
-        return <Button { ...props } />
+      Button(props: any) {
+        return <Button {...props} />
       },
-      ButtonGroup (props: any) {
-        return <ButtonGroup { ...props } />
+      ButtonGroup(props: any) {
+        return <ButtonGroup {...props} />
       },
     },
   })
