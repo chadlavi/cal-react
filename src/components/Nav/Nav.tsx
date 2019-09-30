@@ -1,6 +1,6 @@
-import * as React from "react"
-import { useScroll } from "../../helpers"
-import { RouteProps, routes } from "../../routes"
+import * as React from 'react'
+import { useScroll } from '../../helpers'
+import { RouteProps, routes } from '../../routes'
 import {
   FullWidthParent,
   MenuButton,
@@ -8,7 +8,7 @@ import {
   NavUl,
   NavWrapper,
   StyledLink,
-} from "./components"
+} from './components'
 
 export const Nav: React.FC = () => {
 

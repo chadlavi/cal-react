@@ -1,9 +1,9 @@
-import styled from "@emotion/styled"
-import classnames from "classnames"
-import * as React from "react"
-import style from "./Button.style"
+import styled from '@emotion/styled'
+import classnames from 'classnames'
+import * as React from 'react'
+import style from './Button.style'
 
-const StyledButton = styled("button")(style)
+const StyledButton = styled('button')(style)
 
 interface ButtonProps {
   children?: any
@@ -25,8 +25,8 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
   const classes = classnames(
     className,
-    error ? "error" : null,
-    primary ? "primary" : null,
+    error && 'error',
+    primary && 'primary',
   )
 
   return (

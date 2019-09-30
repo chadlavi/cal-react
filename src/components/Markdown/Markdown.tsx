@@ -1,6 +1,6 @@
 // tslint:disable-next-line: no-submodule-imports
-import marksy from "marksy/jsx"
-import React, { createElement } from "react"
+import marksy from 'marksy/jsx'
+import React, { createElement } from 'react'
 import {
   Button,
   ButtonGroup,
@@ -12,8 +12,8 @@ import {
   Link,
   Pre,
   Ul,
-} from ".."
-import { isExternal } from "../../helpers"
+} from '..'
+import { isExternal } from '../../helpers'
 
 export const Markdown = (markdown: string): {content: object, title: string} => {
 

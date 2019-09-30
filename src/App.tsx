@@ -1,9 +1,9 @@
-import * as React from "react"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import { PageRender } from "./components"
-import * as Pages from "./pages"
-import { RouteProps, routes } from "./routes"
-import { GlobalStyles } from "./theme/GlobalStyles"
+import * as React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { PageRender } from './components'
+import * as Pages from './pages'
+import { RouteProps, routes } from './routes'
+import { GlobalStyles } from './theme/GlobalStyles'
 
 const pageRender = (m: string) => (() => <PageRender markdown={m} />)
 

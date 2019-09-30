@@ -1,8 +1,8 @@
-import styled from "@emotion/styled"
-import * as React from "react"
+import styled from '@emotion/styled'
+import * as React from 'react'
 
-const StyledH1 = styled("h1")({
-  fontStyle: "italic",
+const StyledH1 = styled('h1')({
+  fontStyle: 'italic',
   fontWeight: 500,
 })
 

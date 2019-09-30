@@ -1,8 +1,8 @@
-import styled from "@emotion/styled"
-import * as React from "react"
+import styled from '@emotion/styled'
+import * as React from 'react'
 
-const StyledImg = styled("img")({
-  maxWidth: "100%",
+const StyledImg = styled('img')({
+  maxWidth: '100%',
 })
 
 export const Img: React.FC<any> = (props: any) => {

@@ -1,13 +1,13 @@
-import styled from "@emotion/styled"
-import * as React from "react"
-import theme from "../../theme/cal.theme"
+import styled from '@emotion/styled'
+import * as React from 'react'
+import theme from '../../theme/cal.theme'
 
-const SU = styled("ul")({
+const SU = styled('ul')({
   paddingLeft: theme.metrics.padding.large,
-  listStyle: "disc",
+  listStyle: 'disc',
 })
 
-const SL = styled("li")({
+const SL = styled('li')({
   margin: 2,
 })
 
