@@ -1,21 +1,21 @@
 import theme from '../../theme/cal.theme'
 
 const style = {
-  padding: `${ theme.metrics.padding.default/2 }px ${ theme.metrics.padding.default }px`,
-  borderRadius: theme.borders.radius.default,
-  border: '1px solid',
-  borderColor: 'transparent',
+  'padding': `${ theme.metrics.padding.default / 2 }px ${ theme.metrics.padding.default }px`,
+  'borderRadius': theme.borders.radius.default,
+  'border': '1px solid',
+  'borderColor': 'transparent',
   ...theme.font.default,
-  fontFamily: theme.font.sansSerif,
-  fontWeight: 500,
-  fontSize: theme.metrics.base * 2,
-  letterSpacing: '0.2px',
-  display: 'block',
-  color: theme.color.black,
-  backgroundColor: theme.color.grey[100],
-  marginTop: theme.metrics.spacing.default,
-  marginRight: theme.metrics.spacing.default,
-  marginBottom: theme.metrics.spacing.default,
+  'fontFamily': theme.font.sansSerif,
+  'fontWeight': 500,
+  'fontSize': theme.metrics.base * 2,
+  'letterSpacing': '0.2px',
+  'display': 'block',
+  'color': theme.color.black,
+  'backgroundColor': theme.color.grey[100],
+  'marginTop': theme.metrics.spacing.default,
+  'marginRight': theme.metrics.spacing.default,
+  'marginBottom': theme.metrics.spacing.default,
   [theme.metrics.helpers.under(theme.metrics.breakpoints.sm)]: {
     marginTop: theme.metrics.spacing.compact * 2.5,
     marginRight: theme.metrics.spacing.compact * 2.5,
@@ -24,9 +24,9 @@ const style = {
     padding: `${theme.metrics.padding.compact * 1.25}px ${theme.metrics.padding.compact * 2.5}px`,
   },
   '&.primary': {
-    color: theme.color.white,
-    backgroundColor: theme.color.primary[500],
-    borderColor: theme.color.primary[500],
+    'color': theme.color.white,
+    'backgroundColor': theme.color.primary[500],
+    'borderColor': theme.color.primary[500],
     '&:active': {
       backgroundColor: theme.color.primary[700],
       borderColor: theme.color.primary[700],
@@ -37,9 +37,9 @@ const style = {
     },
   },
   '&.error': {
-    color: theme.color.white,
-    backgroundColor: theme.color.error[500],
-    borderColor: theme.color.error[500],
+    'color': theme.color.white,
+    'backgroundColor': theme.color.error[500],
+    'borderColor': theme.color.error[500],
     '&:active': {
       backgroundColor: theme.color.error[700],
       borderColor: theme.color.error[700],
@@ -50,7 +50,7 @@ const style = {
     },
     '&:focus': {
       ...theme.borders.focusStyle.error,
-    }
+    },
   },
 }
 

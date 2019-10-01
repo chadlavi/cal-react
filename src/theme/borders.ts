@@ -14,5 +14,5 @@ export const borders = {
   },
   radius: {
     default: metrics.base,
-  }
+  },
 }

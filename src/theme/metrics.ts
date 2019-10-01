@@ -35,14 +35,14 @@ const over = (size: Breakpoint) => `@media (min-width: ${ size }px)`
 const under = (size: Breakpoint) => `@media (max-width: ${size + 1}px)`
 
 export const metrics = {
-  base: base,
-  spacing: spacing,
-  height: height,
-  padding: padding,
-  width: width,
+  base,
+  spacing,
+  height,
+  padding,
+  width,
   breakpoints: Breakpoint,
   helpers: {
-    over: over,
-    under: under,
-  }
+    over,
+    under,
+  },
 }

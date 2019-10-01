@@ -6,20 +6,20 @@ export enum Position {
   relative = 'relative',
   unset = 'unset',
   static = 'static',
-  sticky = 'sticky'
+  sticky = 'sticky',
 }
 
 export const skipnavContainerStyle = {
-  display: 'block',
-  left: '50%',
-  position: Position.fixed,
-  top: -100,
-  transform: 'translateX(-50%)',
-  zIndex: 1,
-  width: '100%',
+  'display': 'block',
+  'left': '50%',
+  'position': Position.fixed,
+  'top': -100,
+  'transform': 'translateX(-50%)',
+  'zIndex': 1,
+  'width': '100%',
   '&:focus-within': {
     top: 5,
-  }
+  },
 }
 
 export const skipnavLinkStyle = {

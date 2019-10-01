@@ -74,7 +74,7 @@ const primary = {
 }
 
 export const colors = {
-  primary: primary,
+  primary,
 
   background: {
     default: darkMode ? grey[700] : white,
@@ -82,7 +82,7 @@ export const colors = {
     nav: {
       default: darkMode ? grey[500] : blue[100],
       hover: darkMode ? grey[600] : blue[300],
-    }
+    },
   },
 
   text: {
@@ -98,11 +98,11 @@ export const colors = {
     700: red[700],
   },
 
-  black: black,
-  blue: blue,
-  green: green,
-  grey: grey,
-  red: red,
-  white: white,
+  black,
+  blue,
+  green,
+  grey,
+  red,
+  white,
 
 }

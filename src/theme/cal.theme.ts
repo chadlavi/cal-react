@@ -1,13 +1,13 @@
-import { colors } from './colors'
-import { metrics } from './metrics'
 import { borders } from './borders'
+import { colors } from './colors'
 import { font } from './font'
+import { metrics } from './metrics'
 
 const theme = {
   color: colors,
-  borders: borders,
-  metrics: metrics,
-  font: font,
+  borders,
+  metrics,
+  font,
 }
 
 export default theme
